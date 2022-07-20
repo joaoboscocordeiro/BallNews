@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import br.com.joaobosco.ballnews.databinding.FragmentFavoriteBinding;
+import br.com.joaobosco.ballnews.ui.adapter.NewsAdapter;
 
 public class favoriteFragment extends Fragment {
 
@@ -20,10 +22,20 @@ public class favoriteFragment extends Fragment {
         favoriteViewModel = new ViewModelProvider(this).get(FavoriteViewModel.class);
 
         binding = FragmentFavoriteBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        favoriteViewModel.getText().observe(getViewLifecycleOwner(), binding.textFavorite::setText);
-        return root;
+        loadFavoriteNews();
+
+        return binding.getRoot();
+    }
+
+    private void loadFavoriteNews() {
+        favoriteViewModel.loadFavoriteNews().observe(getViewLifecycleOwner(), localNews -> {
+            binding.rvFavorite.setLayoutManager(new LinearLayoutManager(getContext()));
+            binding.rvFavorite.setAdapter(new NewsAdapter(localNews, updateNews -> {
+                favoriteViewModel.saveNews(updateNews);
+                loadFavoriteNews();
+            }));
+        });
     }
 
     @Override

@@ -6,4 +6,5 @@ package br.com.joaobosco.ballnews.util;
  */
 public class Constants {
     public static final String BASE_URL = "https://joaoboscocordeiro.github.io/ball-news-api/";
+    public static final String LOCAL_DB_NAME = "ball-news";
 }

@@ -1,4 +1,4 @@
-package br.com.joaobosco.ballnews;
+package br.com.joaobosco.ballnews.ui;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import br.com.joaobosco.ballnews.R;
 import br.com.joaobosco.ballnews.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

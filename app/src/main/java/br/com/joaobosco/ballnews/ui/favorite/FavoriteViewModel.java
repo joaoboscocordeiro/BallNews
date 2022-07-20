@@ -1,19 +1,27 @@
 package br.com.joaobosco.ballnews.ui.favorite;
 
+import android.os.AsyncTask;
+
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import java.util.List;
+
+import br.com.joaobosco.ballnews.data.BallNewsRepository;
+import br.com.joaobosco.ballnews.model.News;
 
 public class FavoriteViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
-
     public FavoriteViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<News>> loadFavoriteNews() {
+        return BallNewsRepository.getInstance().getLocalDB().newsDao().loadFavoriteNews();
     }
+
+    public void saveNews(News news) {
+        AsyncTask.execute(() -> BallNewsRepository.getInstance().getLocalDB().newsDao().save(news));
+    }
+
 }

@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // Navigation
     implementation 'androidx.navigation:navigation-fragment:2.5.0'
@@ -49,6 +50,10 @@ dependencies {
 
     // Picasso (HTTP Client): https://square.github.io/picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // DB Room
+    implementation 'androidx.room:room-runtime:2.4.2'
+    annotationProcessor 'androidx.room:room-compiler:2.4.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
