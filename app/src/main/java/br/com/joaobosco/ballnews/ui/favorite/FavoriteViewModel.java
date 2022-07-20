@@ -13,7 +13,6 @@ import br.com.joaobosco.ballnews.model.News;
 public class FavoriteViewModel extends ViewModel {
 
     public FavoriteViewModel() {
-
     }
 
     public LiveData<List<News>> loadFavoriteNews() {

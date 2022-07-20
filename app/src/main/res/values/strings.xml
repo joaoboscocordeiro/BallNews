@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Ball News</string>
-
-    <!-- Screen News -->
     <string name="title_news">News</string>
     <string name="title_favorites">Favorites</string>
     <string name="btn_open_link">Open Link</string>
+    <string name="network_error">Network error.</string>
 </resources>

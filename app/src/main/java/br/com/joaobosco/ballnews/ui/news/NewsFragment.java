@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import br.com.joaobosco.ballnews.R;
 import br.com.joaobosco.ballnews.databinding.FragmentNewsBinding;
 import br.com.joaobosco.ballnews.ui.adapter.NewsAdapter;
 
@@ -53,7 +54,7 @@ public class NewsFragment extends Fragment {
                     break;
                 case ERROR:
                     binding.srNews.setRefreshing(false);
-                    Snackbar.make(binding.srNews, "Network error.", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(binding.srNews, R.string.network_error, Snackbar.LENGTH_LONG).show();
                     break;
             }
         });
